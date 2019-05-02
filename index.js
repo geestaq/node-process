@@ -1,7 +1,5 @@
 //zaladowanie modulow
-const OSinfo = require('../modules/OSInfo');
-//console.log(this);
-//process.exit();
+const OSinfo = require('./modules/OSInfo');
 
 process.stdin.setEncoding('utf-8');
 
@@ -15,7 +13,7 @@ process.stdin.on('readable', function() {
 				process.stdout.write('Wersja Node.js: ' + process.versions.node + '\n');
 				break;
 			case '/lang':
-				process.stdout.write('Język: ' + process.env.LANG + '\n');
+				console.log('Język:'.green, process.env.LANG);
 				break;
 			case '/getOSinfo':
 				OSinfo.print();
